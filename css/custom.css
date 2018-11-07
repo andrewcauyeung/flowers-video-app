@@ -1,6 +1,86 @@
+.navbar-brand img {
+  height: 40px;
+}
+
+.home-icon {
+  max-width: 40%;
+}
+
+.learn-trigger {
+  background-color: #52237f;
+  color: white;
+}
+
 html,
 body {
   height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.pre-sign-in {
+  display: none;
+}
+
+.icon-container {
+  background-color: #dedede;
+}
+
+.card a {
+  color: black;
+  text-decoration: none; /* no underline */
+}
+.icon {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  color: #bdbdbd;
+}
+.icon-label {
+  display: block;
+  font-size: 0.75em;
+}
+
+.share-icon,
+.share-icon a {
+  color: #bdbdbd !important;
+}
+
+.home > .navbar {
+  background-color: white;
+}
+
+.navbar {
+  background-color: #52237f;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.17em;
+}
+h4 {
+  font-size: 1.12em;
+}
+h5 {
+  font-size: 0.83em;
+}
+h6 {
+  font-size: 0.75em;
+}
+.button-100 {
+  width: 100%;
+}
+p {
+  font-size: 0.875em; /* 14px/16=0.875em */
+}
+
+.form-container {
+  text-align: center;
 }
 
 video {
@@ -8,12 +88,23 @@ video {
   height: auto;
 }
 
-/* .index-container {
-  background-image: url("/images/fall-flowers-gifts-hp-quad-banner-v2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.video-wrapper {
   position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-} */
+}
+
+.home-page {
+  height: 100%;
+  /* background-image: url("/images/backgound.jpg"); */
+  background-position: 25% 75%;
+  background-color: #7b1fa2;
+}
