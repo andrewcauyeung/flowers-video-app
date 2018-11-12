@@ -80,7 +80,7 @@ UploadVideo.prototype.ready = function(accessToken) {
           response.items[0].snippet.thumbnails.default.url
         );
 
-        // $(".pre-sign-in").hide();
+        $(".pre-sign-in").hide();
         // $(".post-sign-in").show();
       }
     }.bind(this)
@@ -97,7 +97,7 @@ UploadVideo.prototype.ready = function(accessToken) {
 UploadVideo.prototype.uploadFile = function(file) {
   var metadata = {
     snippet: {
-      title: $("#title").val(),
+      title: "From: Some Body",
       description: $("#description").text(),
       tags: this.tags,
       categoryId: this.categoryId
@@ -162,7 +162,7 @@ UploadVideo.prototype.uploadFile = function(file) {
       var uploadResponse = JSON.parse(data);
       this.videoId = uploadResponse.id;
       $("#video-id").text(this.videoId);
-      $("video-url").attr(
+      $(".video-url").attr(
         "value",
         "https://www.youtube.com/watch?v=" + this.videoId
       );
