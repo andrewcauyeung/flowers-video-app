@@ -91,7 +91,7 @@ body {
 .carousel-indicators {
   bottom: -20px;
 }
-.carousel-indicators li {
+.carousel-indicators .active {
   background-color: #000;
 }
 
