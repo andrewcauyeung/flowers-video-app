@@ -1,11 +1,9 @@
-function copyFunction(link) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val(link).select();
-  document.execCommand("copy");
-  $temp.remove();
-  alert("Copied Successfully");
-}
+$(document).ready(function() {
+  $(".copy-icon").click(function() {
+    $(".copy-link").show();
+    copyInput("copy-link");
+  });
+});
 
 function copyInput(tag) {
   /* Get the text field */
@@ -18,5 +16,5 @@ function copyInput(tag) {
   document.execCommand("copy");
 
   /* Alert the copied text */
-  alert("Copied Successfully");
+  alert(tag + "Copied Successfully");
 }

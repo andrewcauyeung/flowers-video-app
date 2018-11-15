@@ -199,7 +199,7 @@ UploadVideo.prototype.pollForVideoStatus = function() {
         var uploadStatus = response.items[0].status.uploadStatus;
         switch (uploadStatus) {
           // This is a non-final status, so we need to poll again.
-          case "uploaded":
+          case '<span class="badge badge-success">Uploaded</span>':
             $("#post-upload-status").append(
               "<li>Upload status: " + uploadStatus + "</li>"
             );
@@ -211,11 +211,15 @@ UploadVideo.prototype.pollForVideoStatus = function() {
           // The video was successfully transcoded and is available.
           case "processed":
             $("#player").append(response.items[0].player.embedHtml);
-            $("#post-upload-status").append("<li>Final status.</li>");
+            $("#post-upload-status").append(
+              '<li><span class="badge badge-success">Success</span></li>'
+            );
             break;
           // All other statuses indicate a permanent transcoding failure.
           default:
-            $("#post-upload-status").append("<li>Transcoding failed.</li>");
+            $("#post-upload-status").append(
+              '<li><span class="badge badge-danger">Failed</span></li>'
+            );
             break;
         }
       }
