@@ -2,10 +2,10 @@ var recorder_file;
 $(document).ready(function() {
   load_video(".video-container", "/components/recieved-video.html");
   load_section(".section-1", "/components/message.html", respondHandler);
-  load_section(".section-2", "/components/say-thank-you.html", empty);
+  load_section(".section-2", "/components/say-thank-you.html", setupCart);
 
-  appendComponent("/components/shopping-cart.html", ".modal-container");
-  appendComponent("/components/share-modal.html", ".modal-container");
+  // appendComponent("/components/shopping-cart.html", ".modal-container", empty);
+  appendComponent("/components/share-modal.html", ".modal-container", empty);
 });
 
 function empty() {}
@@ -28,6 +28,27 @@ function switch_section(target, component, func) {
 function onClickHandler(target, func) {
   $(target).click(function() {
     func();
+  });
+}
+
+//APPEND SHOPPING CART
+function setupCart() {
+  appendComponent(
+    "/components/shopping-cart.html",
+    ".modal-container",
+    checkboxHandler
+  );
+}
+
+//CHECKBOX HANDLER
+function checkboxHandler() {
+  $(".custom-checkbox").each(function(index) {
+    $(this).change(function() {
+      if ($(this).is(":checked")) {
+        $("#shoppingCartModal").modal("show");
+        // alert("Added to Cart");
+      }
+    });
   });
 }
 
@@ -66,8 +87,9 @@ function respondHandler() {
   });
 }
 
-function appendComponent(source, target) {
+function appendComponent(source, target, callback) {
   $.get(source, function(data) {
     $(target).append(data);
+    callback();
   });
 }
