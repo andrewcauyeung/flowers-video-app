@@ -45,8 +45,29 @@ function checkboxHandler() {
   $(".custom-checkbox").each(function(index) {
     $(this).change(function() {
       if ($(this).is(":checked")) {
+        var checkedItem = $(this);
+
+        var tableRow = [
+          '<tr id="',
+          checkedItem.data("id"),
+          '">',
+          '<th scope="row">',
+          checkedItem.data("item"),
+          "</th>",
+          "<td>1x</td>",
+          "<td>",
+          checkedItem.data("price"),
+          "</td>",
+          "</tr>"
+        ];
+        var item = $(tableRow.join(""));
+        $(".items-container").append(item);
+
         $("#shoppingCartModal").modal("show");
         // alert("Added to Cart");
+      } else {
+        var idName = $(this).data("id");
+        $("#" + idName).remove();
       }
     });
   });
