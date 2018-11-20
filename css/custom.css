@@ -100,7 +100,7 @@ body {
 }
 
 .navbar {
-  background-color: #52237f;
+  background-color: #391858;
 }
 
 h1 {
@@ -134,7 +134,7 @@ p {
 
 video {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .video-wrapper {
@@ -156,4 +156,9 @@ video {
   /* background-image: url("/images/backgound.jpg"); */
   background-position: 25% 75%;
   background-color: #7b1fa2;
+}
+
+.card-header {
+  background-color: #52237f;
+  color: white;
 }

@@ -79,7 +79,7 @@ UploadVideo.prototype.ready = function(accessToken) {
           "src",
           response.items[0].snippet.thumbnails.default.url
         );
-
+        alert("authenticated");
         $(".pre-sign-in").hide();
         // $(".post-sign-in").show();
       }
@@ -177,7 +177,8 @@ UploadVideo.prototype.uploadFile = function(file) {
 
 UploadVideo.prototype.handleUploadClicked = function() {
   $("#button").attr("disabled", true);
-  this.uploadFile($("#recorder").get(0).files[0]);
+  //this.uploadFile($("#recorder").get(0).files[0]);
+  this.uploadFile(recorder_file);
 };
 
 UploadVideo.prototype.pollForVideoStatus = function() {

@@ -1,0 +1,36 @@
+<div class="col-12">
+  <div
+    id="video-info-collapse"
+    class="collapse"
+    aria-labelledby="videoInfo"
+    data-parent="#accordionExample"
+  >
+    <div class="card-body">
+      <form class="video-info">
+        <div class="form-group">
+          <label for="description">Message</label>
+          <textarea class="form-control" id="description"></textarea>
+        </div>
+        <div class="form-group">
+          <span id="signinButton" class="pre-sign-in">
+            <!--
+              IMPORTANT: Replace the value of the <code>data-clientid</code>
+                    attribute in the following tag with your project's client ID.
+            -->
+            <span
+              class="g-signin"
+              data-callback="signinCallback"
+              data-clientid="1071346195772-futdta4g0r3mmsj7vo5ftjb53ifloncp.apps.googleusercontent.com"
+              data-cookiepolicy="single_host_origin"
+              data-scope="https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube"
+            >
+            </span>
+          </span>
+          <button class="btn btn-primary upload-trigger" id="button">
+            Upload Video
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
